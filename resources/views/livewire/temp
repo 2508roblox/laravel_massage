@@ -1,0 +1,35 @@
+    @php
+                            $regions = $showrooms->groupBy('region');
+                        @endphp
+
+                        @foreach ($regions as $regionName => $showroomsInRegion)
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link @if ($loop->first) active @endif" id="showroom-{{ $loop->index }}-tab" data-bs-toggle="tab"
+                                    data-bs-target="#showroom-{{ $loop->index }}" type="button" role="tab"
+                                    aria-controls="showroom-{{ $loop->index }}" aria-selected="{{ $loop->first ? 'true' : 'false' }}">
+                                    {{ $regionName }}
+                                </button>
+                            </li>
+                        @endforeach
+ <div class="tab-content" id="homepage-showroom-tabcontent">
+                        @foreach ($regions as $regionName => $showroomsInRegion)
+                            <div class="tab-pane fade @if ($loop->first) show active @endif" id="showroom-{{ $loop->index }}" role="tabpanel"
+                                aria-labelledby="showroom-{{ $loop->index }}-tab">
+                                <div class="showroom-list">
+                                    @foreach ($showroomsInRegion as $showroom)
+                                        <div class="showroom-card">
+                                            <div class="showroom-card-img-top wrap-ratio aspect-ratio-1x1">
+                                                <img src="{{ asset('storage/' . $showroom->image) }}" alt="{{ $showroom->address }}" width="194" height="194">
+                                            </div>
+                                            <div class="showroom-card-desc">
+                                                <p><strong>Điện thoại:</strong> <a href="tel:{{ $showroom->phone }}" title="Gọi điện thoại">{{ $showroom->phone }}</a></p>
+                                                <p><strong>Thời gian mở cửa:</strong> {{ $showroom->opening_hours }}</p>
+                                                <p><strong>Địa chỉ:</strong> {{ $showroom->address }}</p>
+                                                <p><i class="icofont-google-map"></i> <a href="#" title="Xem bản đồ" data-address="{{ $showroom->address }}" data-id="{{ $showroom->id }}" data-toggle="modal" data-target="#map_embed">Xem bản đồ</a></p>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
