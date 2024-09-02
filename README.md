@@ -32,6 +32,7 @@ If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Lar
 ## Laravel Sponsors
 
 We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+![image](https://github.com/user-attachments/assets/b3d00e2d-c24d-49cc-a442-ad364990d02a)
 
 ### Premium Partners
 
@@ -64,3 +65,4 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+![image](https://github.com/user-attachments/assets/c092bc1d-f568-4324-b1be-a0306d7c951e)
